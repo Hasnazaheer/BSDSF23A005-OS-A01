@@ -43,3 +43,9 @@ obj/%.o: src/%.c
 clean:
 	rm -rf $(OBJ_DIR)/*.o $(BIN_DIR)/* $(LIB_DIR)/*
 
+install: client_dynamic manpage
+	sudo cp bin/client_dynamic /usr/local/bin/client
+	sudo cp man/man3/client.1 /usr/local/share/man/man3/
+
+manpage:
+	@echo "Man page ready"
